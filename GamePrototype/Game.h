@@ -1,5 +1,8 @@
 #pragma once
 #include "BaseGame.h"
+#include "Texture.h"
+#include <vector>
+
 class Game : public BaseGame
 {
 public:
@@ -21,10 +24,15 @@ public:
 	void ProcessMouseDownEvent( const SDL_MouseButtonEvent& e ) override;
 	void ProcessMouseUpEvent( const SDL_MouseButtonEvent& e ) override;
 
+
+
 private:
 
 	// FUNCTIONS
 	void Initialize();
 	void Cleanup( );
 	void ClearBackground( ) const;
+
+	Texture Map = Texture{ "map.png" };
+	std::vector<std::vector<Point2f>> svg;
 };

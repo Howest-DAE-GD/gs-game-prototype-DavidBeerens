@@ -1,9 +1,27 @@
 #include "pch.h"
 #include "Game.h"
+#include "utils.h"
+#include <SVGParser.h>
+
+#include <iostream>
+//#include <opencv2/opencv.hpp>
+
+
+float playerRad{ 15 };
+Point2f playerPos{ 1500, 436 };
+float enemyRad{ 32 };
+Point2f enemyPos1{ 100, 100 };
+Point2f enemyPos2{100, 780};
+Point2f enemyPos3{1360, 100};
+Point2f enemyPos4{1360, 780};
+Point2f enemyPos5{600, 420};
+
+float playerSpeed{ 1.f };
 
 Game::Game( const Window& window ) 
 	:BaseGame{ window }
 {
+
 	Initialize();
 }
 
@@ -14,7 +32,29 @@ Game::~Game( )
 
 void Game::Initialize( )
 {
-	
+	SVGParser::GetVerticesFromSvgFile("map.svg", svg);
+
+
+
+	//// Read the PNG file
+	//Mat image = imread("map.png", IMREAD_COLOR);
+
+	//if (image.empty()) {
+	//	std::cerr << "Error: Unable to read image file" << std::endl;
+	//}
+
+	//// Define the position (x, y) you want to check
+	//int x = 100;
+	//int y = 50;
+
+	//// Get the color at the specified position
+	//Color4f color = Map.at<color4f>(y, x);
+
+	//// Print the color values
+	//std::cout << "Color at position (" << x << ", " << y << "): ";
+	//std::cout << "B: " << static_cast<int>(color[0]) << " ";
+	//std::cout << "G: " << static_cast<int>(color[1]) << " ";
+	//std::cout << "R: " << static_cast<int>(color[2]) << std::endl;
 }
 
 void Game::Cleanup( )
@@ -23,21 +63,51 @@ void Game::Cleanup( )
 
 void Game::Update( float elapsedSec )
 {
-	// Check keyboard state
-	//const Uint8 *pStates = SDL_GetKeyboardState( nullptr );
-	//if ( pStates[SDL_SCANCODE_RIGHT] )
-	//{
-	//	std::cout << "Right arrow key is down\n";
-	//}
-	//if ( pStates[SDL_SCANCODE_LEFT] && pStates[SDL_SCANCODE_UP])
-	//{
-	//	std::cout << "Left and up arrow keys are down\n";
-	//}
+
+	for (int i = 0; i < svg.size(); i++)
+	{
+		for (int j = 0; j < (svg[i].size()-1); j++)
+		{
+			
+		}
+	}
+
+	 //Check keyboard state
+	const Uint8 *pStates = SDL_GetKeyboardState( nullptr );
+	if ( pStates[SDL_SCANCODE_RIGHT] )
+	{
+		playerPos.x += playerSpeed;
+	}
+	if (pStates[SDL_SCANCODE_LEFT])
+	{
+		playerPos.x -= playerSpeed;
+	}
+	if (pStates[SDL_SCANCODE_UP])
+	{
+		playerPos.y += playerSpeed;
+	}
+	if (pStates[SDL_SCANCODE_DOWN])
+	{
+		playerPos.y -= playerSpeed;
+	}
+
 }
 
 void Game::Draw( ) const
 {
 	ClearBackground( );
+
+	Map.Draw(Point2f(0, 0), Rectf(0, 0, 1550, 872));
+
+	utils::SetColor(Color4f(1, 0, 0, 0.8f));
+	utils::FillEllipse(playerPos, playerRad, playerRad);
+
+	utils::SetColor(Color4f(0, 1, 0, 0.8f));
+	utils::FillEllipse(enemyPos1, enemyRad, enemyRad);
+	utils::FillEllipse(enemyPos2, enemyRad, enemyRad);
+	utils::FillEllipse(enemyPos3, enemyRad, enemyRad);
+	utils::FillEllipse(enemyPos4, enemyRad, enemyRad);
+	utils::FillEllipse(enemyPos5, enemyRad, enemyRad);
 }
 
 void Game::ProcessKeyDownEvent( const SDL_KeyboardEvent & e )
@@ -105,6 +175,6 @@ void Game::ProcessMouseUpEvent( const SDL_MouseButtonEvent& e )
 
 void Game::ClearBackground( ) const
 {
-	glClearColor( 0.0f, 0.0f, 0.3f, 1.0f );
+	glClearColor( 0.15f, 0.05f, 0.92f, 1.0f );
 	glClear( GL_COLOR_BUFFER_BIT );
 }

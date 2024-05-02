@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="1920"
+   height="1080"
+   viewBox="0 0 1920 1080"
+   sodipodi:docname="map.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   inkscape:export-filename="map.png"
+   inkscape:export-xdpi="77.5"
+   inkscape:export-ydpi="77.5"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.44083688"
+     inkscape:cx="664.64494"
+     inkscape:cy="368.61707"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g1">
+    <image
+       width="1920"
+       height="1080"
+       preserveAspectRatio="none"
+       xlink:href="map.png"
+       id="image1" />
+    <path
+       style="fill:#000000"
+       d="M 0,0 H 1800 V 499 H 1271 V 184.31692 C 1392.3021,182.0926 1513.6752,182.97205 1635,183 v 165 h -239 v -26 h 213 V 209 h -312 v 265 h 477 V 26 H 838 V 94 H 813 V 26 H 26 v 1028 h 834 v -85 h 25 v 85 h 889 V 838 h -119 v -25 h 119 V 605 h -237 v 174 h -398 v 133 h 398 v 26 H 1114 V 753 h 397 V 579 h 289 v 501 H 900 0 Z M 408,883 H 114 V 857 H 217 V 716 h 25 v 141 h 192 v 107 h -26 z m 244,9 h -44 v -26 h 86 86 V 701 h 26 v 165 h 232 v 26 H 677 v 46 H 652 Z M 906,729 h 107 v 25 H 906 Z M 528,621 H 667 V 746 H 528 Z M 399,489 H 342 V 463 H 813 V 201 h 244 v -80 h 25 V 227 H 838 V 489 H 425 V 679 H 399 Z M 146,299 h 26 v 325 h -26 z m 667,283 h 600 v 25 H 813 Z m -553,-8 h 62 v 26 H 260 Z M 1057,414 H 935 v -94 h 26 v 69 h 244 v 25 h -123 v 89 h -25 z M 681,227 H 562 V 369 H 342 V 344 H 537 V 201 h 28 v -80 h 25 v 80 H 706 V 402 H 681 Z M 182,159 h 201 v 25 H 182 Z"
+       id="path1"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
+  </g>
+</svg>
