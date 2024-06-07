@@ -58,6 +58,7 @@ float timer5{};
 //status variables
 int totalCoins{ 0 };
 bool loser{ 0 };
+bool start{ true };
 
 //van
 Point2f vanPos{1470, 380};
@@ -161,6 +162,12 @@ void Game::Update( float elapsedSec )
 
 		totalCoins = 0;
 		boosts = 0;
+	}
+
+	//press enter to start
+	if (pStates[SDL_SCANCODE_S])
+	{
+		start = false;
 	}
 #pragma endregion
 #pragma region right
@@ -596,6 +603,7 @@ void Game::Draw( ) const
 {
 	ClearBackground( );
 
+
 	//draw the map
 	Map.Draw(Rectf(0, 0, 1550, 872));
 
@@ -619,6 +627,12 @@ void Game::Draw( ) const
 
 	//draw van
 	Van.Draw(Rectf(vanPos.x, vanPos.y, 50, 120));
+
+	//draw the startscreen
+	if (start == true)
+	{
+		Start.Draw(Rectf(0, 0, 1550, 872));
+	}
 }
 
 void Game::ProcessKeyDownEvent( const SDL_KeyboardEvent & e )

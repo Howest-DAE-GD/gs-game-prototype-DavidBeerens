@@ -43,5 +43,6 @@ private:
 	Texture Coin = Texture{ "coin.png" };
 	Texture NotCoin = Texture{ "notcoin.png" };
 	Texture Van = Texture{ "van.png" };
+	Texture Start = Texture{ "startScreen.png" };
 	SoundEffect* coinSound{ new SoundEffect{ "coin.mp3" } };
 };
