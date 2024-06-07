@@ -1,7 +1,7 @@
 #pragma once
 #include "BaseGame.h"
 #include "Texture.h"
-#include <vector>
+#include "SoundEffect.h"
 
 class Game : public BaseGame
 {
@@ -16,6 +16,10 @@ public:
 
 	void Update( float elapsedSec ) override;
 	void Draw( ) const override;
+
+
+	void getVector(Point2f& vector, Point2f& bools, Point2f enemyPos);
+
 
 	// Event handling
 	void ProcessKeyDownEvent( const SDL_KeyboardEvent& e ) override;
@@ -34,5 +38,10 @@ private:
 	void ClearBackground( ) const;
 
 	Texture Map = Texture{ "map.png" };
-	std::vector<std::vector<Point2f>> svg;
+	Texture Player = Texture{ "player.png" };
+	Texture Drone = Texture{ "drone.png" };
+	Texture Coin = Texture{ "coin.png" };
+	Texture NotCoin = Texture{ "notcoin.png" };
+	Texture Van = Texture{ "van.png" };
+	SoundEffect* coinSound{ new SoundEffect{ "coin.mp3" } };
 };

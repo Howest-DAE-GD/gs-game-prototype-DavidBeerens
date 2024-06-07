@@ -5,6 +5,8 @@
 #include <iostream>
 #include "utils.h"
 
+#include "Texture.h"
+
 
 #pragma region OpenGLDrawFunctionality
 void utils::SetColor( const Color4f& color )
@@ -682,5 +684,9 @@ bool utils::IntersectRectLine(const Rectf& r, const Point2f& p1, const Point2f& 
 	intersectMax = tMax;
 	return true;
 }
+
+
+
+
 
 #pragma endregion CollisionFunctionality

@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "Vector2f.h"
+#include "Texture.h"
 
 namespace utils
 {
@@ -80,6 +81,9 @@ namespace utils
 	float DistPointLineSegment(const Point2f& p, const Point2f& a, const Point2f& b);
 	bool IsPointOnLineSegment(const Point2f& p, const Point2f& a, const Point2f& b);
 	bool IntersectRectLine(const Rectf& r, const Point2f& p1, const Point2f& p2, float& intersectMin, float& intersectMax);
+
+
+	
 
 #pragma endregion CollisionFunctionality
 
